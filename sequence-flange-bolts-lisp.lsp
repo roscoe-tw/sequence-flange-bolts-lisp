@@ -1,4 +1,7 @@
 ;;; -*- coding:big5 -*-
+;;; author: Each Application Mechanical Design Studio (every.push.colin@gmail.com)
+;;; version: 0.0.1
+
 (defun c:RRR ()
   (load "sequence-flange-bolts-lisp.lsp")
   (alert "Loaded!"))
@@ -11,14 +14,14 @@
 (defun dxf (i l)
   (cdr (assoc i l)))
 
-;;; Á³®êÂê©T¶¶§Ç
+;;; èºæ “é–å›ºé †åº
 
 (defun screw-sequence (OO r n / *error* blockname rr points)
   (setq *error* xx:MyError)
   ;; (setq n 4)
   (setq ;; OO (getpoint "set OO point\n")
 	;; r 15
-	blockname "Á³µ·½s¸¹"
+	blockname "èºçµ²ç·¨è™Ÿ"
 	rr (+ r 10))
   (command "_.circle" OO rr)
   (setq points (insert-point OO n r))
@@ -27,7 +30,7 @@
 	  points)
   (princ))
 
-;;; ¹Ï¶ô´¡¤JÂI¦Cªí¡Aªş¤WÁ³®ê½s¸¹
+;;; åœ–å¡Šæ’å…¥é»åˆ—è¡¨ï¼Œé™„ä¸Šèºæ “ç·¨è™Ÿ
 (defun insert-point (OO n r / list1 radian1 n1 num-l)
   (setq radian1 (* pi (/ (/ 360.0 n) 180.0)))
   (setq list1 nil
@@ -59,7 +62,7 @@
 		(setq n1 (1+ n1)))))
   list1)
 
-;;; Ã¸»sÁ³®ê©TÂê¶¶§Ç¹Ï
+;;; ç¹ªè£½èºæ “å›ºé–é †åºåœ–
 (defun c:screw-sequence (/ *error* old_env-set
 			 OO list1)
   (setq *error* xx:MyError)
@@ -70,7 +73,7 @@
 		 '(clayer . "0")
 		 '(osmode . 0)
 		 '(attdia . 0)))
-  (setq OO (getpoint "³]©w¤@­Ó©wÂI")
+  (setq OO (getpoint "è¨­å®šä¸€å€‹å®šé»")
 	list1 '((4 15) (8 35) (12 55) (16 75) (20 95) (24 115)
 		))
   (mapcar '(lambda (x)
@@ -80,7 +83,7 @@
   (set-env old_env-set)
   (princ))
 
-;;; ¨ú±o°õ¦æµ{¦¡«eªºÀô¹Ò
+;;; å–å¾—åŸ·è¡Œç¨‹å¼å‰çš„ç’°å¢ƒ
 (defun get-old_env-set (/ old_env)
   (setq old_env (list (cons 'cmdecho (getvar "cmdecho"))
 		      (cons 'clayer (getvar "clayer"))
@@ -88,7 +91,7 @@
 		      (cons 'attdia (getvar "attdia"))))
   old_env)
 
-;;; ³]©wµ{¦¡°õ¦æÀô¹Ò
+;;; è¨­å®šç¨‹å¼åŸ·è¡Œç’°å¢ƒ
 (defun set-env (env-set)
   (mapcar '(lambda (x)
 	    (cond ((equal (car x) 'cmdecho)
