@@ -9,6 +9,9 @@
 * sequence-flange-bolts-lisp.lsp/ reload
 #+begin_src lisp :tangle sequence-flange-bolts-lisp.lsp :padline no
     ;;; -*- coding:big5 -*-
+    ;;; author: Each Application Mechanical Design Studio (every.push.colin@gmail.com)
+    ;;; version: 0.0.1
+    
   (defun c:RRR ()
     (load "sequence-flange-bolts-lisp.lsp")
     (alert "Loaded!"))
