@@ -1,0 +1,14 @@
+* sequence-flange-bolts-lisp
+  這個程式是用來繪製法蘭螺栓鎖固順序的 autolisp 程式。
+
+  載入 "sequence-flange-bolts-lisp.lsp" 後，在修改程式後，可以用 "RRR" 命令重新載入該程式。
+  使用命令 "screw-sequence" 指定一個定點，就可以繪製法蘭螺栓鎖固順序圖。 
+  
+* The license
+  #+begin_src text
+    This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along with this program. If not, see <https://www.gnu.org/licenses/>. 
+  #+end_src
